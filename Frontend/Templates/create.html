@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Data</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">CRUD Operations</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/create">Create</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/read">Read</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/update">Update</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/delete">Delete</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Create</h1>
+            <p class="lead">Click the button below to add data to each table in the database.</p>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Create Data</h2>
+        <form method="post" action="/create">
+            <!-- Teacher Form -->
+            <div class="mb-3">
+                <label for="teacher_firstname" class="form-label">Teacher First Name</label>
+                <input type="text" class="form-control" id="teacher_firstname" name="teacher_firstname">
+            </div>
+            <div class="mb-3">
+                <label for="teacher_lastname" class="form-label">Teacher Last Name</label>
+                <input type="text" class="form-control" id="teacher_lastname" name="teacher_lastname">
+            </div>
+            <div class="mb-3">
+                <label for="teacher_room" class="form-label">Teacher Room</label>
+                <input type="text" class="form-control" id="teacher_room" name="teacher_room">
+            </div>
+
+            <!-- Facility Form -->
+            <div class="mb-3">
+                <label for="facility_name" class="form-label">Facility Name</label>
+                <input type="text" class="form-control" id="facility_name" name="facility_name">
+            </div>
+
+            <!-- Classroom Form -->
+            <div class="mb-3">
+                <label for="classroom_capacity" class="form-label">Classroom Capacity</label>
+                <input type="text" class="form-control" id="classroom_capacity" name="classroom_capacity">
+            </div>
+            <div class="mb-3">
+                <label for="classroom_name" class="form-label">Classroom Name</label>
+                <input type="text" class="form-control" id="classroom_name" name="classroom_name">
+            </div>
+            <div class="mb-3">
+                <label for="classroom_facility" class="form-label">Classroom Facility</label>
+                <input type="text" class="form-control" id="classroom_facility" name="classroom_facility">
+            </div>
+
+            <!-- Child Form -->
+            <div class="mb-3">
+                <label for="child_firstname" class="form-label">Child First Name</label>
+                <input type="text" class="form-control" id="child_firstname" name="child_firstname">
+            </div>
+            <div class="mb-3">
+                <label for="child_lastname" class="form-label">Child Last Name</label>
+                <input type="text" class="form-control" id="child_lastname" name="child_lastname">
+            </div>
+            <div class="mb-3">
+                <label for="child_age" class="form-label">Child Age</label>
+                <input type="text" class="form-control" id="child_age" name="child_age">
+            </div>
+            <div class="mb-3">
+                <label for="child_room" class="form-label">Child Room</label>
+                <input type="text" class="form-control" id="child_room" name="child_room">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<!-- Footer -->
+<footer class="footer py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <div class="small">Copyright &copy; Sanaia Washington 2024</div>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <a class="small" href="#!">Privacy</a>
+                <span class="text-white mx-1">&middot;</span>
+                <a class="small" href="#!">Terms</a>
+                <span class="text-white mx-1">&middot;</span>
+                <a class="small" href="#!">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</html>
