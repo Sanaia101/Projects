@@ -1,0 +1,131 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operations</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+        }
+        .navbar {
+            background-color: #343a40; /* Dark background color */
+        }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #ffffff !important; /* White text color */
+        }
+        .jumbotron {
+            background-color: #343a40; /* Dark background color */
+            color: #ffffff; /* White text color */
+            padding: 4rem 2rem; /* Add padding */
+            margin-bottom: 0; /* Remove default margin */
+        }
+        .feature {
+            background-color: #6c757d; /* Gray background color */
+            color: #ffffff; /* White text color */
+            padding: 2rem; /* Add padding */
+        }
+        .testimonial {
+            background-color: #f8f9fa; /* Light gray background */
+            padding: 4rem 2rem; /* Add padding */
+        }
+        .footer {
+            background-color: #343a40; /* Dark background color */
+            color: #ffffff; /* White text color */
+            padding: 2rem 0; /* Add padding */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">CRUD Operations</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/create">Create</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/read">Read</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/update">Update</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/delete">Delete</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li> <!-- Added login button -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">CRUD Operations</h1>
+            <p class="lead">You will be able to perform all of the four CRUD operations on this website!</p>
+            <a class="btn btn-primary btn-lg" href="#features">Get Started</a>
+        </div>
+    </header>
+
+
+    <!--Features section-->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"> <!-- Each card takes up 3 columns out of 12, making 4 cards -->
+                    <div class="feature">
+                        <h2 class="fw-bold">Create</h2>
+                        <p>This operation adds information to database.</p>
+                    </div>
+                </div>
+                <div class="col-md-3"> <!-- Each card takes up 3 columns out of 12, making 4 cards -->
+                    <div class="feature">
+                        <h2 class="fw-bold">Read</h2>
+                        <p>This operation fetches data from the database.</p>
+                    </div>
+                </div>
+                <div class="col-md-3"> <!-- Each card takes up 3 columns out of 12, making 4 cards -->
+                    <div class="feature">
+                        <h2 class="fw-bold">Update</h2>
+                        <p>This operation updates data to the database.</p>
+                    </div>
+                </div>
+                <div class="col-md-3"> <!-- Each card takes up 3 columns out of 12, making 4 cards -->
+                    <div class="feature">
+                        <h2 class="fw-bold">Delete</h2>
+                        <p>This operation deletes data frorm the database.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <div class="small">Copyright &copy; Sanaia Washington 2024</div>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a class="small" href="#!">Privacy</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="small" href="#!">Terms</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="small" href="#!">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

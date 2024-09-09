@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Data</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+        }
+        .navbar {
+            background-color: #343a40; /* Dark background color */
+        }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #ffffff !important; /* White text color */
+        }
+        .jumbotron {
+            background-color: #343a40; /* Dark background color */
+            color: #ffffff; /* White text color */
+            padding: 4rem 2rem; /* Add padding */
+            margin-bottom: 0; /* Remove default margin */
+        }
+        .btn-primary {
+            background-color: #007bff; /* Primary button color */
+            border-color: #007bff; /* Primary button border color */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker primary button color on hover */
+            border-color: #0056b3; /* Darker primary button border color on hover */
+        }
+        .container {
+            margin-top: 2rem; /* Add margin space */
+        }
+        .pre-scrollable {
+            max-height: 400px; /* Set maximum height for data container */
+            overflow-y: auto; /* Add vertical scroll bar */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">CRUD Operations</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/create">Create</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/read">Read</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/update">Update</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/delete">Delete</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Read Data</h1>
+            <p class="lead">Click the button below to fetch data from each table in the database.</p>
+        </div>
+    </header>
+
+    <!-- Read section -->
+    <section id="read">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="fw-bold">Fetch Data from Each Table</h2>
+                    <button id="fetchDataBtn" class="btn btn-primary">Fetch Data</button>
+                    <div id="dataContainer" class="mt-3 pre-scrollable"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Event handler for the Fetch Data button click
+            $("#fetchDataBtn").click(function() {
+                // Fetch data from each table sequentially
+                fetchData("facilities");
+            });
+    
+            // Function to fetch data from a specific table
+            function fetchData(tableName) {
+                $.ajax({
+                    url: "/" + tableName, // Update the URL to match your Flask API endpoint
+                    method: "GET",
+                    success: function(data) {
+                        // Display the fetched data in the dataContainer
+                        $("#dataContainer").append("<h3>" + tableName + ":</h3>");
+                        $("#dataContainer").append("<pre>" + JSON.stringify(data, null, 2) + "</pre>");
+    
+                        // Fetch data from the next table
+                        if (tableName === "facilities") {
+                            fetchData("classrooms");
+                        } else if (tableName === "classrooms") {
+                            fetchData("teachers");
+                        } else if (tableName === "teachers") {
+                            fetchData("children");
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle errors
+                        console.error("Error fetching data from " + tableName + " table:", error);
+                    }
+                });
+            }
+        });
+    </script>
+    
+</body>
+</html>
